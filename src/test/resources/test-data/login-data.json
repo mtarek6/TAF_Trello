@@ -1,0 +1,13 @@
+{
+  "email" : "dishatarekk@gmail.com",
+  "invalid_email" : "asasas",
+  "password" : "Trellopassword1$",
+  "invalid_password" : "invalidPassword",
+  "messages" :
+  {
+    "VerifyInvalidEmail" : "Email address must contain text before and after an '@' symbol",
+    "VerifyEmptyEmail" : "Enter an email address",
+    "VerifyEmptyPassword" : "Enter your password",
+    "VerifyInvalidPassword" : "Incorrect email address and / or password."
+  }
+}
