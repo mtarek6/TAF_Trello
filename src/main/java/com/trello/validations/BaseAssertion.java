@@ -108,4 +108,10 @@ public abstract class BaseAssertion {
         });
         assertTrue(flag, "Element text does not contain the expected text. Expected: " + expectedText);
     }
+
+    //verify that an element is disabled
+    public void isElementDisabled(By locator) {
+        boolean isDisabled = !driver.findElement(locator).isEnabled();
+        assertTrue(isDisabled, "Button should be disabled");
+    }
 }

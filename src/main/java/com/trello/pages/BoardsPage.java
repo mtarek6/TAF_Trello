@@ -88,4 +88,9 @@ public class BoardsPage {
         return new BoardPage(driver);
     }
 
+    @Step("Verify Create Board button is disabled when board title is empty")
+    public BoardsPage verifyCreateBoardButtonIsDisabled() {
+        driver.verify().isElementDisabled(createBoardFinalButton);
+        return this;
+    }
 }

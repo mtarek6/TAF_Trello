@@ -39,6 +39,19 @@ public class BoardsTest extends BaseTest {
                 .verifyBoardIsCreated(testData.getJsonData("board_name") + timestamp);
     }
 
+    @Description("Verify that user cannot create a new board with empty title")
+    @Test
+    public void createNewBoardInvalidTC() {
+        new LoginPage(driver).navigate()
+                .enterLoginEmail(testData.getJsonData("email"))
+                .clickOnContinueButton()
+                .enterLoginPassword(testData.getJsonData("password"))
+                .clickOnLoginButton()
+                .verifyBoardsPageIsLoaded()
+                .clickOnCreateNewBoardButton()
+                .verifyCreateBoardButtonIsDisabled();
+    }
+
     //Configurations
     @BeforeClass
     protected void preCondition() {
