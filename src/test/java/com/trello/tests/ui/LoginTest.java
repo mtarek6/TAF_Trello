@@ -28,7 +28,7 @@ public class LoginTest extends BaseTest {
                 .clickOnContinueButton()
                 .enterLoginPassword(testData.getJsonData("password"))
                 .clickOnLoginButton()
-                .verifyBoardsPageIsLoaded();
+                .verifyUserIsLoggedIn();
     }
 
     @Description("Verify the error message is displayed when user tries to login with invalid email")

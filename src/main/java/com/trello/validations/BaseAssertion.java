@@ -114,4 +114,9 @@ public abstract class BaseAssertion {
         boolean isDisabled = !driver.findElement(locator).isEnabled();
         assertTrue(isDisabled, "Button should be disabled");
     }
+
+    //verify that response code equals expected
+    public void responseCodeEquals(int actualCode, int expectedCode) {
+        assertEquals(String.valueOf(actualCode), String.valueOf(expectedCode), "Response code does not match expected code. Expected: " + expectedCode + ", but got: " + actualCode);
+    }
 }

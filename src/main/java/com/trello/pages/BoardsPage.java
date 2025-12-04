@@ -76,6 +76,12 @@ public class BoardsPage {
     }
 
     //validations
+    @Step("Verify logged in by checking url contains 'boards'")
+    public BoardsPage verifyUserIsLoggedIn() {
+        driver.verify().assertPageUrlContains("/boards");
+        return new BoardsPage(driver);
+    }
+
     @Step("Verify Boards page is loaded by checking Create Board button is visible")
     public BoardsPage verifyBoardsPageIsLoaded() {
         driver.verify().isElementVisible(createButton);
