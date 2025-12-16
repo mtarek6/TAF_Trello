@@ -119,4 +119,14 @@ public abstract class BaseAssertion {
     public void responseCodeEquals(int actualCode, int expectedCode) {
         assertEquals(String.valueOf(actualCode), String.valueOf(expectedCode), "Response code does not match expected code. Expected: " + expectedCode + ", but got: " + actualCode);
     }
+
+    //add an assertion to assert not null
+    public void assertNotNull(Object object, String message) {
+        assertTrue(object != null, message);
+    }
+
+    //add an assertion to assert not empty string
+    public void assertNotEmpty(String str, String message) {
+        assertTrue(str != null && !str.isEmpty(), message);
+    }
 }

@@ -2,6 +2,7 @@
   "email" : "dishatarekk@gmail.com",
   "password" : "Trellopassword1$",
   "board_name": "Test Board",
+  "description": "This is a test board created for automation testing purposes.",
   "board_visibility" :
     {
         "private" : "Private",

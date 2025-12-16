@@ -1,6 +1,5 @@
 package com.trello.pages;
 
-import com.google.common.base.Verify;
 import com.trello.drivers.GUIDriver;
 import com.trello.utils.dataReader.PropertyReader;
 import io.qameta.allure.Step;
@@ -8,7 +7,7 @@ import org.openqa.selenium.By;
 
 public class BoardsPage {
     private final GUIDriver driver;
-    private final String loginPageEndpoint = "/u/mostafatarek18/boards";
+    private final String boardsPageEndpoint = "/u/mostafatarek18/boards";
     public BoardsPage(GUIDriver driver) {
         this.driver = driver;
     }
@@ -42,7 +41,7 @@ public class BoardsPage {
     @Step("Navigate to Boards page")
     public BoardsPage navigate()
     {
-        driver.browser().navigateTo(PropertyReader.getProperty("baseUrlWeb") + loginPageEndpoint);
+        driver.browser().navigateTo(PropertyReader.getProperty("baseUrlWeb") + boardsPageEndpoint);
         return this;
     }
 
@@ -89,9 +88,9 @@ public class BoardsPage {
     }
 
     @Step("Verify Board '{boardTitle}' is created")
-    public BoardPage verifyBoardIsCreated(String boardTitle) {
+    public ListsPage verifyBoardIsCreated(String boardTitle) {
         driver.verify().assertPageUrlContains(boardTitle.replaceAll(" ", "-").toLowerCase());
-        return new BoardPage(driver);
+        return new ListsPage(driver);
     }
 
     @Step("Verify Create Board button is disabled when board title is empty")
